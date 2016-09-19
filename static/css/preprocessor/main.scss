@@ -1,0 +1,17 @@
+@import 'color.scss';
+body{
+	background-color:$main-body-color;
+}
+@media screen and (min-width: 1200px) {
+  #container{
+		width:1200px;
+		background-color: white;
+		margin-top:30px;
+		margin-left:calc((100% - 1200px) / 2);
+		margin-right:calc((100% - 1200px) / 2);
+	}
+}
+#container{
+	background-color: white;
+	margin-top:30px;	
+}
