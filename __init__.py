@@ -11,8 +11,8 @@ def showIndex():
 def staticRequest(path):
     print(path)
     return send_from_directory('static',path)
-app.run()
 
+app.run()
 
 
 
