@@ -40,6 +40,10 @@
   height: 40px;
   display: inline-block; }
 
+input {
+  outline: none;
+  border: none; }
+
 #navi-phone-panel > input {
   color: white;
   background-color: #ffffff;
@@ -92,40 +96,106 @@
 a:link, a:hover {
   text-decoration: none; }
 
-input::-webkit-input-placeholder {
+.navi-input::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #ffffff; }
 
-input:-moz-placeholder {
+.navi-input:-webkit-input-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #ffffff;
   opacity: 1; }
 
-input::-moz-placeholder {
+.navi-input::-webkit-input-placeholder {
   /* Mozilla Firefox 19+ */
   color: #ffffff;
   opacity: 1; }
 
-input:-ms-input-placeholder {
+.navi-input:-webkit-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #ffffff; }
 
-input:focus::-webkit-input-placeholder {
+.navi-input:focus::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #a0a0a0; }
 
-input:focus:-moz-placeholder {
+.navi-input:focus:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #a0a0a0;
   opacity: 1; }
 
-input:focus::-moz-placeholder {
+.navi-input:focus::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #a0a0a0;
   opacity: 1; }
 
-input:focus:-ms-input-placeholder {
+.navi-input:focus:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #a0a0a0; }
+
+/* ====================== Login Popup CSS ==================== */
+.modal-dialog {
+  width: 400px;
+  border-radius: 5px; }
+
+#login-popup-tab {
+  width: 100%;
+  padding-bottom: 20px; }
+
+#login-popup-tab > div {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 50px; }
+
+#login-popup-tab > div > a {
+  font-size: 13px;
+  color: #707070;
+  width: 100%;
+  height: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: inline-block; }
+
+#login-popup-tab-sign {
+  border-top-left-radius: 5px; }
+
+#login-popup-tab-new {
+  border-top-right-radius: 5px;
+  background-color: #d2d8d8; }
+
+.login-popup > .panel > img, input {
+  position: inline-block;
+  float: left; }
+
+.login-popup img {
+  padding-top: 5px;
+  padding-right: 10px; }
+
+.login-popup input {
+  width: calc(100% - 80px); }
+
+.login-popup > div, button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border-color: #999999;
+  height: 50px;
+  text-align: center; }
+
+.login-popup > button {
+  margin-bottom: 10px;
+  height: 50px; }
+
+.login-popup > .panel {
+  background-color: white;
+  height: 50px; }
+
+#login-popup-sign > div {
+  border-color: #C6EADD; }
+
+#login-popup-new > div {
+  border-color: #fbd4b9;
+  height: 45px; }
 
 /*# sourceMappingURL=nav.css.map */

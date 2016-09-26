@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACA,IAAI;EACH,gBAAgB,ECOA,OAAO;;ADLxB,qCAAsC;EACpC,UAAU;IACV,KAAK,EAAC,MAAM;IACZ,gBAAgB,EAAE,KAAK;IACvB,UAAU,EAAC,IAAI;IACf,WAAW,EAAC,yBAAyB;IACrC,YAAY,EAAC,yBAAyB;AAGxC,UAAU;EACT,gBAAgB,EAAE,KAAK;EACvB,UAAU,EAAC,IAAI",
-"sources": ["preprocessor/main.scss","preprocessor/color.scss"],
-"names": [],
-"file": "main.css"
-}

@@ -3,6 +3,7 @@
 .treeview, .treeview ul {
 	list-style-type: none;
 	overflow: hidden;
+	-webkit-padding-start: 5px;
 }
 
 .treeview li {
