@@ -173,32 +173,36 @@
 
 	      	<!--======== Sign in =========-->
 			<div id="login-popup-sign" class="login-popup">
-				<div class="panel">
-					<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
-					<input type="email" placeholder="E-mail">
-				</div>
-				<div class="panel">
-					<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
-					<input type="password" placeholder="Password">
-				</div>
-				<button class="btn btn-primary">Login</button>
+				<form>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt=""/>
+						<input type="email" placeholder="E-mail"/>
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt=""/>
+						<input type="password" placeholder="Password"/>
+					</div>
+					<input type="submit" class="btn btn-primary login-submit" value="Login"/>
+				</form>
 			</div>
 
 			<!-- ======== New Account ======== -->
 			<div id="login-popup-new" class="login-popup" style="display:none">
-				<div class="panel">
-					<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
-					<input type="email" placeholder="E-mail">
-				</div>
-				<div class="panel">
-					<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
-					<input type="password" placeholder="Password">
-				</div>
-				<div class="panel">
-					<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
-					<input type="password" placeholder="Password Confirm">
-				</div>
-				<button class="btn btn-primary">Create account</button>
+				<form>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
+						<input type="email" placeholder="E-mail">
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
+						<input type="password" placeholder="Password">
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
+						<input type="password" placeholder="Password Confirm">
+					</div>
+					<input type="submit" class="btn btn-primary login-submit" value="Create account">
+				</form>
 			</div>
 
 	     </div>
