@@ -173,32 +173,40 @@
 
 	      	<!--======== Sign in =========-->
 			<div id="login-popup-sign" class="login-popup">
-				<div class="panel">
-					<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
-					<input type="email" placeholder="E-mail">
-				</div>
-				<div class="panel">
-					<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
-					<input type="password" placeholder="Password">
-				</div>
-				<button class="btn btn-primary">Login</button>
+				<form action="./login" method="post">
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt=""/>
+						<input type="email" placeholder="E-mail" name="ID"/>
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt=""/>
+						<input type="password" placeholder="Password" name="pwd"/>
+					</div>
+					<input type="submit" class="btn btn-primary login-submit" value="Login"/>
+				</form>
 			</div>
 
 			<!-- ======== New Account ======== -->
 			<div id="login-popup-new" class="login-popup" style="display:none">
-					<div class="panel">
+				<form action="./enrollment" method="post">
+					<div class="panel login-panel">
 						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
 						<input type="email" placeholder="E-mail" name="ID">
 					</div>
-					<div class="panel">
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
+						<input type="text" placeholder="nickname" name="nickname">
+					</div>
+					<div class="panel login-panel">
 						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
 						<input type="password" placeholder="Password" name="pwd">
 					</div>
-					<div class="panel">
+					<div class="panel login-panel">
 						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
-						<input type="password" placeholder="Password Confirm">
+						<input type="password" placeholder="Password Confirm" name="pwdCheck">
 					</div>
-					<button type="submit" class="btn btn-primary">Create account</button>
+					<input type="submit" class="btn btn-primary login-submit" value="Create account">
+				</form>
 			</div>
 	     </div>
    	</div>

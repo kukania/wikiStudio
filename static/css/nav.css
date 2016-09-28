@@ -163,18 +163,21 @@ a:link, a:hover {
   border-top-right-radius: 5px;
   background-color: #d2d8d8; }
 
-.login-popup > .panel > img, input {
+.login-panel > img,
+.login-panel > input {
   position: inline-block;
   float: left; }
 
-.login-popup img {
+.login-panel > img {
   padding-top: 5px;
   padding-right: 10px; }
 
-.login-popup input {
+.login-panel > input {
+  padding-top: 0px;
   width: calc(100% - 80px); }
 
-.login-popup > div, button {
+.login-popup > form > div,
+.login-popup > form > input {
   width: calc(100% - 20px);
   padding: 10px;
   margin-left: 10px;
@@ -183,18 +186,18 @@ a:link, a:hover {
   height: 50px;
   text-align: center; }
 
-.login-popup > button {
+.login-popup > form > input {
   margin-bottom: 10px;
   height: 50px; }
 
-.login-popup > .panel {
+.login-popup .panel {
   background-color: white;
   height: 50px; }
 
-#login-popup-sign > div {
+#login-popup-sign div {
   border-color: #C6EADD; }
 
-#login-popup-new > div {
+#login-popup-new div {
   border-color: #fbd4b9;
   height: 45px; }
 
