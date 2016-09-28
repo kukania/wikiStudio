@@ -1,8 +1,8 @@
 from flask import Flask,render_template,send_from_directory
-import os
+from wikiStudio.code.login import loginTask
 app=Flask(__name__)
 #app._static_folder=os.path.abspath("static/")
-
+app.register_blueprint(loginTask)
 @app.route("/")
 def showIndex():
     return render_template("example.html")
