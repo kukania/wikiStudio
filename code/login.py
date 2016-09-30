@@ -12,6 +12,9 @@ def login():
     if res['NUM']==1:
         session['UID']=res['ROW']['ID']
         session['nickname']=res['ROW']['nickname']
+        query="select * from entry where ID="+str(session['UID']);
+        session['treeNav']=connector.query_select(query);
+        print(session['treeNav']);
         return "<script>alert('success'); location.href='./';</script>"
     else:
         return "<script>alert('No user is here'); location.href='./'</script>"
@@ -24,8 +27,11 @@ def enrollment():
     num=connector.query_insert(query)
     if num==1:
         #session setting
-        session['UID']=connector.query_select("select ID from user where UID='"+request.form.get("ID")+"'");
-        session['nickname']=request.form.get("nickname");
+        res=connector.query_select("select ID from user where UID='" + request.form.get("ID") + "'");
+        session['UID']=res['ROW']['ID']
+        session['nickname']=request.form.get('nickname')
+        query = "insert into content (DEPTH,ID,ISCODE,ISPAGE,CONTENTS,TITLE) values (0,"+str(session['UID'])+",0,1,'index','mainpage')"
+        connector.query_insert(query)
     else:
         return "error"
     return "<script> alert('complete');location.href='./'</script>"

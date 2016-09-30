@@ -11,13 +11,23 @@
     <link rel="stylesheet" href="../static/css/main.css">
   </head>
   <body>
+  <!-- <code id="treeModel" style="display:none">{{ treeNav }}</code>  -->
   	<div id="nav"></div>
     <div id="container">
         <div id="sidebar"></div>
-        <div id="article"></div>
+        <div id="article">
+          {{ contents }}
+        </div>
     </div>
-    <script>$("#article").load("../static/html/article.html");</script>
+  <!--  <script>$("#article").load("../static/html/article.html");</script>-->
   	<script>$("#nav").load("../static/html/nav2.html");</script>
-    <script>$("#sidebar").load("../static/html/tree.html");</script>
+    <script>
+    $("#sidebar").load("../static/html/tree.html",function(){
+      {%- if 'nickname' in session -%}
+        $("#navi-right-menu-login").hide();
+        $("#navi-right-menu-hello").text("hello,{{ nickname }}!" )
+      {% endif %}
+    });
+  </script>
   </body>
 </html>

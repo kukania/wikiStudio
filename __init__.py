@@ -7,11 +7,14 @@ app=Flask(__name__)
 #app._static_folder=os.path.abspath("static/")
 app.register_blueprint(loginTask)
 app.secret_key='cdb05b9f959af26e266b4c3ab5f09aca'
+#session[nickname], sesseion[UID]
 @app.route("/")
 def showIndex():
     if 'nickname' in session:
         print(session['nickname'])
-    return render_template("example.html",session=session)
+        return render_template("example.html",session=session,contents=session['treeNav'],nickname=session['nickname'])
+    else:
+        return render_template("example.html")
 
 @app.route("/static/<path:path>")
 def staticRequest(path):
