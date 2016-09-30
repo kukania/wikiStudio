@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA;;;WAGY;EACV,OAAO,EAAE,IAAI",
+"sources": ["preprocessor/img-box.scss"],
+"names": [],
+"file": "img-box.css"
+}

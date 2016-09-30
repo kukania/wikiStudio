@@ -1,0 +1,48 @@
+@import 'color.scss';
+body{
+	background-color:$main-body-color;
+}
+#sidebar{
+	width:280px;
+	float:right;
+}
+#sidebar-tree{
+	background-color:white;
+	margin-left:20px;
+	border-radius: 10px;
+}
+#sidebar-imgBox{
+	background-color:white;
+	margin-left:20px;
+	border-radius: 10px;
+	margin-top:10px;
+}
+@media screen and (min-width: 1200px) {
+  	#container{
+		width:1200px;
+		margin-left:calc((100% - 1200px) / 2);
+		margin-right:calc((100% - 1200px) / 2);
+	}
+	#article{
+		width:900px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#article{
+		width:calc(100% - 300px);
+	}
+}
+@media screen and (max-width: 1000px) {
+	#container{
+		width:100%;
+	}
+	#article{
+		width:100%;
+	}
+	#sidebar{
+		display:none;
+	}
+}
+#container{
+	margin-top:15px;
+}
