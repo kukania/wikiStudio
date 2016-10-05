@@ -10,9 +10,9 @@ def login():
     query="select * from user where UID='"+request.form.get("ID")+"' and pwd=md5('"+request.form.get("pwd")+"')";
     res=connector.query_select(query)
     if res['NUM']==1:
-        session['UID']=res['ROW']['ID']
-        session['nickname']=res['ROW']['nickname']
-        query="select * from entry where ID="+str(session['UID']);
+        session['UID']=res['ROW'][0]['ID']
+        session['nickname']=res['ROW'][0]['nickname']
+        query="select entry.CONTENTID,TITLE from entry join content on entry.CONTENTID=content.CONTENTID where entry.ID="+str(session['UID']);
         session['treeNav']=connector.query_select(query);
         print(session['treeNav']);
         return "<script>alert('success'); location.href='./';</script>"
@@ -35,3 +35,8 @@ def enrollment():
     else:
         return "error"
     return "<script> alert('complete');location.href='./'</script>"
+
+@loginTask.route('/logout')
+def logout():
+    session.clear()
+    return "<script>location.href='./';</script>"

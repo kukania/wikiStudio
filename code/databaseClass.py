@@ -17,7 +17,12 @@ class DatabaseConnector:
         print(q);
         result={};
         result['NUM']=self.cur.execute(q);
-        result['ROW']=self.cur.fetchone();
+
+        resArray=[];
+        for i in range(result['NUM']):
+            resArray.append(self.cur.fetchone());
+
+        result['ROW']=resArray;
         result['ALL']=self.cur.fetchall();
         return result
     def commit(self):
