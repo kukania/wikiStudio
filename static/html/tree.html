@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="../static/css/jquery.treeView.css"><!--시발-->
 	<code id="treeModel" style="display:none">
 	[
-	    { 
+	    {
 	        "label" : "item1",
 	        "children": []
 	    },
@@ -22,11 +22,15 @@
 	    {
 	        "label": "item3",
 	        "children": [
-	            { 
+	            {
 	            	"label":"Hello",
 	            	"link":"naver.com"
+	            	"children": [
+	                    { "label": "innerItem1" },
+	                    { "label": "innerItem2" }
+	                ]
 	        	},
-	            { 
+	            {
 	                "label":"Inner List",
 	                "children": [
 	                    { "label": "innerItem1" },
@@ -45,7 +49,8 @@
 	</ul>
 	<script>
 	var $dataTree = $('#dataTree');
-	var model = JSON.parse($('#treeModel').html());
+	var model = JSON.parse($('#treeModel').html());	
+	console.log(model);
 	$dataTree.treeView(model);
 	</script>
   </body>
