@@ -1,0 +1,214 @@
+<link rel="stylesheet" href="../static/css/nav.css">
+<script type="text/javascript" src="../static/js/jquery.color.js"></script>
+<script>
+	$(document).ready(function(){
+		if($(window).width() <= 768){
+			console.log("width");
+			phoneUI();
+		}
+		else{
+			computerUI();
+		}
+		$(window).resize(function(){
+			console.log("resize");
+			if($(window).width() <= 768){
+				phoneUI();
+			}else {
+				computerUI();
+			}
+		});
+	});
+	var isPhoneUI;
+	var navHasFocus = false;
+	function phoneUI(){
+		isPhoneUI = true;
+		$("#navi-panel").hide();
+		$("#navi-right-menu-search").show();
+	}
+	function computerUI(){
+		if(navHasFocus){
+			$("#navi-phone-form").hide();
+    		$("#navi-right-menu").show();
+    		$("#navi-left-menu").show();
+    		navHasFocus = false;
+		}
+
+		isPhoneUI = false;
+		$("#navi-panel").show();
+		$("#navi-right-menu-search").hide();	
+	}
+
+	
+	$("#navi-panel").click(function(e){
+		console.log("clicked " + navHasFocus);
+		e.stopPropagation();
+		if(!navHasFocus)
+			$("#navi-panel>input").focus();
+	});
+
+    $("#navi-search").click(function(event){
+        event.stopPropagation();
+   		console.log("click navi-search");
+    });
+
+    $("#navi-phone-search").click(function(event){
+        event.stopPropagation();
+   		console.log("click navi-phone-search");
+    });
+
+    $(window).click(function(e){
+    	if(navHasFocus){
+    		if(isPhoneUI){
+    			if(e.target.id != 'navi-search-btn'){
+    				$("#navi-phone-form").hide();
+					$("#navi-left-menu").show();
+    				$("#navi-right-menu").show();
+    				navHasFocus = false;
+    			}
+    		}else {
+	    		if(e.target.id != 'navi-panel'){
+	    			naviFocusEvent(false);
+	      		} 
+      		}
+    	}
+    })
+
+    $("#navi-phone-panel").click(function(e){
+    	console.log("aa");
+    	e.stopPropagation();
+    });
+
+
+	function naviFocusEvent(hasFocus){
+		navHasFocus = hasFocus;
+		if(isPhoneUI){
+			$("#navi-phone-form").show();
+			$("#navi-right-menu").hide();
+			$("#navi-left-menu").hide();
+		}else {
+			if(hasFocus){
+				//$( "#navi-panel" ).animate({backgroundColor: "#ffffff"}, 1000 );
+				$("#navi-panel").css('background-color', '#ffffff');
+				$("#navi-panel>input").css('background-color', '#ffffff');
+				//$("#navi-panel").animate({backgroundColor: /*$navi-point-color*/"#ffffff"}, 150 );
+				//$("#navi-panel>input").animate({backgroundColor: /*$navi-point-color*/"#ffffff"}, 150);
+				$("#navi-panel>img").show(150);
+				$("#navi-panel>input").css('text-align', 'left');
+			} else {
+				$("#navi-panel").stop(true, false);
+				$("#navi-panel>input").stop(true, false);
+				
+				$('#navi-panel').css('background-color', /*$navi-sub-color*/'#4a73c9');
+				$('#navi-panel>input').css('background-color', /*$navi-sub-color*/'#4a73c9');
+				$("#navi-panel>img").hide();
+				$("#navi-panel>input").css('text-align', 'center');	
+			}
+		}	
+	}
+</script>
+<nav id="navi" style="text-align:center">
+	<form id="navi-phone-form">
+		<div id="navi-phone-panel" class="panel">
+			<input class="navi-input" type="text">
+			<img id="navi-phone-search"src="../static/resource/navi-search-img.png">
+		</div>
+	</form>
+	<ul id="navi-left-menu" class="navi-side-menu">
+		<li>
+			<a href="#">Menu1</a>
+		</li>
+		<li>
+			<a href="#">Menu2</a>
+		</li>
+	</ul>
+	<form style="margin:0 auto; padding:0; display:inline;">
+		<div id="navi-panel"class="panel" >
+			<input class="navi-input" id="navi-input"placeholder="Click for search" onfocus="naviFocusEvent(true)"></input>
+  			<img id="navi-search"src="../static/resource/navi-search-img.png"/>
+		</div>
+	</form>
+	<ul id="navi-right-menu" class="navi-side-menu">
+		<li id="navi-right-menu-search">
+			<a href="#" id="navi-search-btn" onclick="naviFocusEvent(true)">Search</a>
+		</li>
+		<li>
+			<a id="navi-right-menu-login" data-toggle="modal" data-target="#login-popup" href="#">Login</a>
+			<a id="navi-right-menu-hello"></a>
+		</li>
+	</ul>
+</nav>
+
+<!-- ===============Login PopUP==================== -->
+<style>
+  .collapsing {
+    -webkit-transition: none;
+    transition: none;
+}</style>
+<script>
+	function toggle(isSign){
+		if(isSign){
+			$("#login-popup-tab-sign").css('background-color','white');
+			$("#login-popup-tab-new").css('background-color', 
+				/*$navi-login-popup-disabled-color*/'#d2d8d8');
+			$("#login-popup-new").hide();
+			$("#login-popup-sign").show();
+		}else {
+			$("#login-popup-tab-sign").css('background-color', 
+				/*$navi-login-popup-disabled-color*/'#d2d8d8');
+			$("#login-popup-tab-new").css('background-color','white');
+			$("#login-popup-new").show();
+			$("#login-popup-sign").hide();
+		}
+	}
+</script>
+<div class="modal fade" id="login-popup" role="dialog">
+    <div class="modal-dialog">
+    
+      	<!-- Modal content-->
+      	<div class="modal-content">
+      		
+			<div id="login-popup-tab">
+				<div id="login-popup-tab-sign"><a onclick="toggle(true)" href="#">Sign in</a>
+				</div><div id="login-popup-tab-new"><a onclick="toggle(false)" href="#">New account</a></div>
+			</div>
+
+	      	<!--======== Sign in =========-->
+			<div id="login-popup-sign" class="login-popup">
+				<form action="./login" method="post">
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt=""/>
+						<input type="email" placeholder="E-mail" name="ID"/>
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt=""/>
+						<input type="password" placeholder="Password" name="pwd"/>
+					</div>
+					<input type="submit" class="btn btn-primary login-submit" value="Login"/>
+				</form>
+			</div>
+
+			<!-- ======== New Account ======== -->
+			<div id="login-popup-new" class="login-popup" style="display:none">
+				<form action="./enrollment" method="post">
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
+						<input type="email" placeholder="E-mail" name="ID">
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-email.PNG" alt="">
+						<input type="text" placeholder="nickname" name="nickname">
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
+						<input type="password" placeholder="Password" name="pwd">
+					</div>
+					<div class="panel login-panel">
+						<img src="../static/resource/nav2-login-popup-sign-pwd.PNG" alt="">
+						<input type="password" placeholder="Password Confirm" name="pwdCheck">
+					</div>
+					<input type="submit" class="btn btn-primary login-submit" value="Create account">
+				</form>
+			</div>
+	     </div>
+   	</div>
+ </div>

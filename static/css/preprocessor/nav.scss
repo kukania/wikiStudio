@@ -1,0 +1,207 @@
+@import 'color.scss';
+#navi{
+	background-color:$navi-main-color;
+	padding:10px;
+	height:60px;
+}
+#navi-panel{
+	padding: 10px; 
+	background-color: $navi-sub-color;
+	text-align:center; 
+	width:50%; 
+	margin:0 auto;
+	height: 40px;
+	display:inline-block;
+}
+#navi-panel>input{
+	color:white; 
+	background-color:$navi-sub-color; 
+	outline:none; 
+	border-color: inherit;
+  	box-shadow: none; 
+  	text-align:center; 
+  	width:calc(100% - 80px); 
+  	display:block;
+  	float: left;
+  	height: 25px;
+  	color:$navi-input-text-color;
+  	font-size: 15px;
+  	height:20px;
+}
+#navi-phone-form{
+	display:none;
+	z-index:-1;
+}
+#navi-phone-panel{
+	padding: 10px; 
+	background-color: $navi-point-color;
+	text-align:center; 
+	width:100%; 
+	margin:0 auto;
+	height: 40px;
+	display:inline-block;
+}
+input{
+	outline:none;
+	border:none;
+}
+#navi-phone-panel>input{
+	color:white; 
+	background-color:$navi-point-color; 
+	outline:none; 
+	border-color: inherit;
+  	box-shadow: none; 
+  	width:calc(100% - 80px); 
+  	display:block;
+  	float: left;
+  	height: 25px;
+  	color:$navi-input-text-color;
+  	font-size: 15px;
+  	height:20px;
+}
+#navi-phone-search{
+	position:absolute;
+	padding:10px;
+	top:15px;
+	right:20px;
+}
+
+#navi-panel>img{
+	display:none;
+	width:20px;
+	height: 20px;
+	float:right;
+}
+
+#navi-left-menu{
+	position:absolute;
+	padding:18px 0 0 10px;
+	margin:0;
+	left:0;
+	top:0;
+}
+#navi-right-menu{
+	position:absolute;
+	padding:18px 0 10px;
+	margin:0;
+	right:0;
+	top:0;
+}
+.navi-side-menu>li{
+	float:left;
+	list-style-type: none;
+	padding-right:20px;
+}
+.navi-side-menu>li>a{
+	color:$navi-point-color;
+	font-size:15px;
+}
+
+
+a:link,a:hover {
+    text-decoration: none;
+}
+
+
+//change placeholder at input tag
+.navi-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $navi-input-text-placeholder-color;
+}
+.navi-input:-webkit-input-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $navi-input-text-placeholder-color;
+   opacity:  1;
+}
+.navi-input::-webkit-input-placeholder { /* Mozilla Firefox 19+ */
+   color:    $navi-input-text-placeholder-color;
+   opacity:  1;
+}
+.navi-input:-webkit-input-placeholder { /* Internet Explorer 10-11 */
+   color:   $navi-input-text-placeholder-color;
+}
+
+.navi-input:focus::-webkit-input-placeholder{ /* WebKit, Blink, Edge */
+    color:    $navi-input-text-placeholder-color-focus;
+}
+.navi-input:focus:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+   color:   $navi-input-text-placeholder-color-focus;
+   opacity:  1;
+}
+.navi-input:focus::-moz-placeholder{ /* Mozilla Firefox 19+ */
+   color:   $navi-input-text-placeholder-color-focus;
+   opacity:  1;
+}
+.navi-input:focus:-ms-input-placeholder{ /* Internet Explorer 10-11 */
+   color:    $navi-input-text-placeholder-color-focus;
+}
+
+/* ====================== Login Popup CSS ==================== */
+.modal-dialog{
+	width:400px;
+	border-radius:5px;
+}
+#login-popup-tab{
+	width:100%;
+	padding-bottom:20px;
+}
+#login-popup-tab>div{
+	display:inline-block;
+	width:50%;
+	text-align:center;
+	height:50px;
+}
+#login-popup-tab > div > a {
+	font-size:13px;
+	color:#707070;
+	width:100%;
+	height:100%;
+	padding-top:15px;
+	padding-bottom:15px;
+	display:inline-block;
+}
+#login-popup-tab-sign{
+	border-top-left-radius:5px;
+}
+#login-popup-tab-new{
+	border-top-right-radius:5px;
+	background-color:$navi-login-popup-disabled-color;
+}
+
+.login-panel > img, 
+.login-panel > input{
+	position:inline-block;
+	float:left;
+}
+.login-panel > img{
+	padding-top:5px;
+	padding-right:10px;
+}
+.login-panel > input {
+	padding-top:0px;
+	width:calc(100% - 80px);
+}
+.login-popup > form > div,
+.login-popup > form > input{
+	width:calc(100% - 20px);
+	padding:10px;
+	margin-left:10px;
+	border-radius:5px;
+	border-color:#999999;
+	height:50px;
+	text-align:center;
+}
+.login-popup > form > input{
+	margin-bottom:10px;
+	height:50px;
+}
+
+.login-popup .panel{
+	background-color:white;
+	height:50px;
+}
+#login-popup-sign div{
+	border-color:#C6EADD;
+}
+#login-popup-new div{
+	border-color:#fbd4b9;
+	height:45px;
+}

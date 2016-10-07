@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="../static/js/jquery.treeView.js"></script><!--시발-->
+	<link rel="stylesheet" href="../static/css/jquery.treeView.css"><!--시발-->
+  </head>
+  <body>
+  	<ul class="treeview" id="dataTree">
+		
+	</ul>
+	<script>
+	var $dataTree = $('#dataTree');
+	var model = JSON.parse($('#treeModel').html());
+	$dataTree.treeView(model);
+	</script>
+  </body>
+</html>
