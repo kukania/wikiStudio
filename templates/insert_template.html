@@ -1,0 +1,7 @@
+{% extends "example.html" %}
+{% block content %}
+<form action="./submit/{{ target }}" target="POST">
+	<textarea rows="20" cols="100" name="content">{{ content }}</textarea>
+	<input type="submit" value="submit">
+</form>
+{% endblock %}

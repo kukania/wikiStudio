@@ -3,7 +3,7 @@ from .databaseClass import DatabaseConnector
 
 connector=DatabaseConnector()
 
-loginTask=Blueprint('loginTask',__name__,template_folder='templates');
+loginTask=Blueprint('loginTask',__name__,template_folder='templates')
 
 @loginTask.route('/login',methods=["POST"])
 def login():

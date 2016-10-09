@@ -16,9 +16,12 @@
     <div id="container">
         <div id="sidebar"></div>
         <div id="article">
+            {% block content %}
           {{ contents }}
+            {% endblock %}
         </div>
     </div>
+    
   <!--  <script>$("#article").load("../static/html/article.html");</script>-->
   	<script>$("#nav").load("../static/html/nav2.html",function(){
       {%- if 'nickname' in session -%}

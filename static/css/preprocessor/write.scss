@@ -1,0 +1,72 @@
+@import 'color.scss';
+body{
+	background-color:$main-body-color;
+}
+#sidebar{
+	width:280px;
+	float:right;
+}
+#sidebar-tree{
+	background-color:white;
+	margin-left:20px;
+	border-radius: 10px;
+}
+#sidebar-imgBox{
+	background-color:white;
+	margin-left:20px;
+	border-radius: 10px;
+	margin-top:10px;
+}
+#article{
+	min-height:300px;
+}
+#tools{
+	display:inline-block;
+}
+.tools-item-div{
+	display:table;
+	float:left;
+	border:1px solid #c8ccd1;
+	height:40px;
+	margin-left:-1px;
+	margin-top:-1px;
+	text-align:center;
+}
+.tools-item-div span{
+	display:table-cell;
+	vertical-align:middle;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#tools-item-paragraph{
+	width:120px;
+}
+@media screen and (min-width: 1200px) {
+  	#container{
+		width:1200px;
+		margin-left:calc((100% - 1200px) / 2);
+		margin-right:calc((100% - 1200px) / 2);
+	}
+	#article, #tools{
+		width:900px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#article, #tools{
+		width:calc(100% - 300px);
+	}
+}
+@media screen and (max-width: 1000px) {
+	#container{
+		width:100%;
+	}
+	#article, #tools{
+		width:100%;
+	}
+	#sidebar{
+		display:none;
+	}
+}
+#container{
+	margin-top:15px;
+}
